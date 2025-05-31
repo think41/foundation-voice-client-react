@@ -1,0 +1,41 @@
+name: Publish React SDK to GitHub Packages
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-publish-react-sdk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@think41'
+
+      - name: Install dependencies
+        working-directory: ./react-sdk # Ensure this path is correct
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Build package
+        working-directory: ./react-sdk # Ensure this path is correct
+        run: npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}} # May not be needed for build, but good practice
+
+      - name: Publish to GitHub Packages
+        working-directory: ./react-sdk # Ensure this path is correct
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

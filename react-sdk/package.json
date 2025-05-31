@@ -1,6 +1,6 @@
 {
-  "name": "@pipecat-cai/react-js",
-  "version": "1.0.0",
+  "name": "@think41/react-sdk",
+  "version": "0.1.0",
   "description": "PipeCat CAI React SDK - Extension of PipeCat React SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,6 +18,15 @@
   ],
   "author": "",
   "license": "MIT",
+  "publishConfig": {
+    "@think41:registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/think41/react-js-cai.git",
+    "directory": "react-sdk"
+  },
   "peerDependencies": {
     "@pipecat-ai/client-react": "^0.3.5",
     "react": "^18.0.0",
