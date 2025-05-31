@@ -36,7 +36,10 @@
     "@think41/client-js-standalone": "^0.1.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.0.0",
+    "lucide-react": "^0.300.0"
   },
   "devDependencies": {
     "@testing-library/react": "^13.0.0",
