@@ -1,0 +1,39 @@
+{
+  "name": "@pipecat-cai/react-js",
+  "version": "1.0.0",
+  "description": "PipeCat CAI React SDK - Extension of PipeCat React SDK",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "pipecat",
+    "cai",
+    "react",
+    "typescript",
+    "sdk"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "@pipecat-ai/client-react": "^0.3.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@think41/client-js-standalone": "^0.1.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.0.0",
+    "@types/jest": "^29.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "tsup": "^7.2.0"
+  }
+}
