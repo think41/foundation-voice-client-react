@@ -23,19 +23,19 @@ jobs:
           scope: '@think41'
 
       - name: Install dependencies
-        working-directory: ./react-sdk # Ensure this path is correct
+        working-directory: ./foundation-voice-client-react # Ensure this path is correct
         run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Build package
-        working-directory: ./react-sdk # Ensure this path is correct
+        working-directory: ./foundation-voice-client-react # Ensure this path is correct
         run: npm run build
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}} # May not be needed for build, but good practice
 
       - name: Publish to GitHub Packages
-        working-directory: ./react-sdk # Ensure this path is correct
+        working-directory: ./foundation-voice-client-react # Ensure this path is correct
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -18,7 +18,7 @@ cd my-ai-app
 Install the Think41 SDK packages:
 
 ```bash
-npm install @think41/react-sdk@0.1.1 @think41/client-js-standalone@0.1.0
+npm install @think41/foundation-voice-client-react@0.1.1 @think41/foundation-voice-client-js@0.1.0
 ```
 
 ### - Set Up Environment Variables
@@ -197,7 +197,7 @@ function App() {
   };
 
   return (
-    <CAIProvider clientType="websocket" options={clientOptions}>
+    <CAIProvider clientType="webrtc" options={clientOptions}>
       {/* Any component here (and its children) can now use useRTVIClient() */}
       <MyComponent />
       {/* ... other components like ChatWindow, MicControl, etc. */}
@@ -854,12 +854,12 @@ export function CustomChatWindow() {
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
             placeholder="Type your message..."
-            className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
           />
           <button
             onClick={handleSendMessage}
             disabled={!inputText.trim()}
-            className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Send
           </button>
@@ -943,7 +943,7 @@ function VoiceCallUI() {
           visualizerStyle="bars"
           barCount={12}
           barColor="#3b82f6"
-          barGlowColor="rgba(59, 130, 246, 0.7)"
+          barGlowColor="rgba(59, 130, 246, 0.6)"
           className="rounded-lg"
         />
       </div>
@@ -1062,7 +1062,8 @@ You can create your own custom audio visualizer using the same underlying hooks 
 
 import { useEffect, useRef, useState } from 'react';
 import { useRTVIClientMediaTrack, useRTVIClientEvent } from '@think41/client-react';
-import { RTVIEvent } from '@think41/client-js';
+import { RTVIEvent } from '@think41/client-js';// Adjust path if needed
+import { Mic, MicOff } from 'lucide-react';
 
 interface CustomAudioVizProps {
   participantType?: 'bot' | 'local';
@@ -1152,7 +1153,7 @@ export function CustomAudioViz({
       {Array.from({ length: barCount }).map((_, i) => (
         <div
           key={i}
-          className="w-3 bg-[var(--bar-color)] rounded-full transition-all duration-100 ease-in-out"
+          className="w-3 bg-[var(--bar-color)] rounded-full transition-all duration-100"
           style={{
             height: '0%',
             boxShadow: `0 0 8px 2px var(--glow-color)`,
@@ -1473,76 +1474,3 @@ function VoiceInterface() {
     </div>
   );
 }
-```
-
-
-## Hooks
-
-### useRTVIClientTransportState()
-
-Hook to get the current connection state of the AI client.
-
-```tsx
-const transportState = useRTVIClientTransportState();
-// Possible states: 'disconnected', 'connecting', 'connected', 'ready', 'error'
-```
-
-### useChat()
-
-Hook to access and modify the chat state.
-
-```tsx
-const { 
-  messages,          // Array of chat messages
-  sendMessage,       // Function to send a new message
-  clearMessages,     // Function to clear all messages
-  isTyping,         // Boolean indicating if AI is typing
-  error             // Any error that occurred
-} = useChat();
-```
-
-
-## Advanced Usage
-
-### Styling
-
-The widget uses Tailwind CSS for styling. You can customize the appearance by:
-
-1. Overriding Tailwind classes
-2. Using the `className` prop on components
-3. Adding custom CSS with the `style` prop
-
-
-### Custom Styling
-
-You can customize the appearance of components using Tailwind classes or custom CSS:
-
-```tsx
-<ChatWindow
-  className="bg-white dark:bg-gray-900 rounded-xl shadow-lg"
-  messageClassName="p-4 rounded-lg"
-  inputClassName="border rounded-lg p-3 w-full focus:ring-2 focus:ring-blue-500"
-  buttonClassName="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors"
-/>
-```
-
-### Handling Custom Events
-
-Listen for specific events from the AI service:
-
-```tsx
-const handleAIResponse = (response) => {
-  console.log('AI Response:', response);
-  // Handle custom logic based on response
-};
-
-// In your component
-useEffect(() => {
-  const subscription = RTVIClient.on('aiResponse', handleAIResponse);
-  return () => subscription.unsubscribe();
-}, []);
-```
-
-## License
-
-MIT © [PipeCat](https://pipecat.ai)
