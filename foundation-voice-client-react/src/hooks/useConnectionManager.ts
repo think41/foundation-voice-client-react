@@ -3,7 +3,7 @@ import {
   useRTVIClient,
   useRTVIClientTransportState,
 } from "@pipecat-ai/client-react";
-import { RTVIEvent } from "@think41/client-js-standalone";
+import { RTVIEvent } from "@think41/foundation-voice-client-js";
 
 // Connection state interface
 export interface ConnectionState {

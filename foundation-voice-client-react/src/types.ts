@@ -1,4 +1,4 @@
-import { RTVIClientHelper } from '@think41/client-js-standalone';
+import { RTVIClientHelper } from '@think41/foundation-voice-client-js';
 
 /**
  * Extended helper interface for CAI-specific functionality

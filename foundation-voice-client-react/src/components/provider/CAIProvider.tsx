@@ -8,7 +8,7 @@ import {
   Client,
   RTVIEvent,
   LLMHelper,
-} from "@think41/client-js-standalone";
+} from "@think41/foundation-voice-client-js";
 import { type PropsWithChildren, useEffect, useState, useCallback } from "react";
 
 export interface CAIProviderProps extends PropsWithChildren {

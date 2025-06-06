@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Mic } from "lucide-react";
 import { cn } from "../../utils/utils";
 import { useRTVIClient, useRTVIClientEvent } from "@pipecat-ai/client-react";
-import { RTVIEvent } from "@think41/client-js-standalone";
+import { RTVIEvent } from "@think41/foundation-voice-client-js";
 
 interface MicControlProps {
   onStart?: () => void;

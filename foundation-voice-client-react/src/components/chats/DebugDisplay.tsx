@@ -7,7 +7,7 @@ import {
   TransportState,
   TranscriptData,
   BotLLMTextData,
-} from '@think41/client-js-standalone';
+} from '@think41/foundation-voice-client-js';
 import { useRTVIClient, useRTVIClientEvent } from '@pipecat-ai/client-react';
 
 export interface DebugDisplayProps {

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { cn } from "../../utils/utils"
 import { useRTVIClientMediaTrack, useRTVIClientEvent } from "@pipecat-ai/client-react"
-import { RTVIEvent } from "@think41/client-js-standalone"
+import { RTVIEvent } from "@think41/foundation-voice-client-js"
 
 interface AudioVisualizerProps {
   participantType?: "bot" | "local"

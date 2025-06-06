@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRTVIClient, useRTVIClientEvent } from "@pipecat-ai/client-react";
-import { RTVIEvent } from "@think41/client-js-standalone";
+import { RTVIEvent } from "@think41/foundation-voice-client-js";
 import { log } from "../utils/logger";
 
 // Define transcript structure

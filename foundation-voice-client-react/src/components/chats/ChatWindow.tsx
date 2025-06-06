@@ -6,7 +6,7 @@ import {
   TranscriptData,
   BotLLMTextData,
   LLMHelper,
-} from '@think41/client-js-standalone';
+} from '@think41/foundation-voice-client-js';
 import { useRTVIClient, useRTVIClientEvent } from '@pipecat-ai/client-react';
 import { useChat } from './ChatContext'; // Import the chat context
 

@@ -1,5 +1,5 @@
 {
-  "name": "@think41/react-sdk",
+  "name": "@think41/foundation-voice-client-react",
   "version": "0.1.1",
   "description": "PipeCat CAI React SDK - Extension of PipeCat React SDK",
   "main": "dist/index.js",
@@ -24,8 +24,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/think41/react-js-cai.git",
-    "directory": "react-sdk"
+    "url": "git+https://github.com/think41/foundation-voice-client-react.git",
+    "directory": "foundation-voice-client-react"
   },
   "peerDependencies": {
     "@pipecat-ai/client-react": "^0.3.5",
@@ -33,7 +33,7 @@
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "@think41/client-js-standalone": "^0.1.0",
+    "@think41/foundation-voice-client-js": "^0.1.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "typescript": "^5.0.0",
