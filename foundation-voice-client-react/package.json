@@ -20,7 +20,7 @@
   "license": "MIT",
   "publishConfig": {
     "@think41:registry": "https://npm.pkg.github.com",
-    "access": "restricted"
+    "access": "public"
   },
   "repository": {
     "type": "git",
