@@ -271,7 +271,7 @@ These hooks allow you to build custom components that respond to voice interacti
 This hook allows you to access media tracks for audio visualization. which can be used to create custom audio visualizers.
 
 ```typescript
-import { useRTVIClientMediaTrack } from '@pipecat-ai/react-js';
+import { useRTVIClientMediaTrack } from '@pipecat-ai/react-js'; // Adjust path if needed
 
 function AudioVisualizer() {
   const audioTrack = useRTVIClientMediaTrack('audio', 'bot');
@@ -287,7 +287,7 @@ you can use this events to customise the behavior of your components based on th
 below you will find a table with all the events that are available and their data types.
 
 ```typescript
-import { useRTVIClientEvent, RTVIEvent } from '@pipecat-ai/react-js';
+import { useRTVIClientEvent, RTVIEvent } from '@pipecat-ai/react-js'; // Adjust path if needed
 
 function MyComponent() {
   useRTVIClientEvent(RTVIEvent.BotTranscript, (data) => {
@@ -338,7 +338,7 @@ function MyComponent() {
 
 ### 1. CAIProvider
 
-The `CAIProvider` component is the foundation of your PipeCat AI application, initializing the client and setting up the communication layer. It accepts the following props:
+The `CAIProvider` component is the foundation of your think41 AI application, initializing the client and setting up the communication layer. It accepts the following props:
 
 #### Props
 
@@ -457,7 +457,7 @@ You can integrate the ChatProvider with RTVI events for real-time communication 
 
 ```tsx
 import { useEffect } from 'react';
-import { useRTVIClient, useRTVIClientEvent, RTVIEvent } from '@pipecat-ai/react-js';
+import { useRTVIClient, useRTVIClientEvent, RTVIEvent } from '@pipecat-ai/react-js'; // Adjust path if needed
 import { useChat } from './path-to/ChatProvider';
 
 function RTVIEventChat() {
@@ -525,7 +525,7 @@ The `ConnectionButton` is a pre-styled, interactive button component that manage
 #### Usage
 
 ```tsx
-import { ConnectionButton } from '@pipecat-ai/react-js';
+import { ConnectionButton } from '@pipecat-ai/react-js'; // Adjust path if needed
 
 function App() {
   const handleConnect = () => {
@@ -582,7 +582,7 @@ The button automatically applies different styles based on its state:
 You can create your own custom connection button while leveraging the same connection management logic. Here's how to build a custom button using the same hooks and patterns as the built-in `ConnectionButton`:
 
 ```tsx
-import { useRTVIClient, useRTVIClientEvent, RTVIEvent } from '@pipecat-ai/react-js';
+import { useRTVIClient, useRTVIClientEvent, RTVIEvent } from '@pipecat-ai/react-js'; // Adjust path if needed
 import { useState, useCallback } from 'react';
 
 export function CustomConnectionButton({
@@ -707,7 +707,7 @@ The `ChatWindow` component provides a complete chat interface that displays the 
 #### Usage
 
 ```tsx
-import { ChatWindow } from '@pipecat-ai/react-js';
+import { ChatWindow } from '@pipecat-ai/react-js'; // Adjust path if needed
 
 function ChatInterface() {
   return (
@@ -778,7 +778,7 @@ The component uses Tailwind CSS for styling. You can customize the appearance by
 You can build your own custom chat interface while still leveraging the `ChatProvider` for state management. Here's how to create a custom chat window:
 
 ```tsx
-import { useChat, useRTVIClient, useRTVIClientEvent, RTVIEvent } from '@pipecat-ai/react-js';
+import { useChat, useRTVIClient, useRTVIClientEvent, RTVIEvent } from '@pipecat-ai/react-js'; // Adjust path if needed
 import { useState, useRef, useEffect } from 'react';
 
 export function CustomChatWindow() {
@@ -895,7 +895,7 @@ export function CustomChatWindow() {
 To use this custom component, simply include it in your application:
 
 ```tsx
-import { ChatProvider } from '@pipecat-ai/react-js';
+import { ChatProvider } from '@pipecat-ai/react-js'; // Adjust path if needed
 import { CustomChatWindow } from './CustomChatWindow';
 
 function App() {
@@ -931,7 +931,7 @@ The `AudioVisualizer` component provides real-time visualization of audio input 
 #### Basic Usage
 
 ```tsx
-import { AudioVisualizer } from '@pipecat-ai/react-js';
+import { AudioVisualizer } from '@pipecat-ai/react-js'; // Adjust path if needed
 
 function VoiceCallUI() {
   return (
@@ -1061,8 +1061,8 @@ You can create your own custom audio visualizer using the same underlying hooks 
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useRTVIClientMediaTrack, useRTVIClientEvent } from '@pipecat-ai/client-react';
-import { RTVIEvent } from '@pipecat-ai/client-js';
+import { useRTVIClientMediaTrack, useRTVIClientEvent } from '@think41/client-react';
+import { RTVIEvent } from '@think41/client-js';
 
 interface CustomAudioVizProps {
   participantType?: 'bot' | 'local';
@@ -1228,7 +1228,7 @@ The `MicControl` component is a customizable microphone button that handles micr
 #### Usage
 
 ```tsx
-import { MicControl } from '@pipecat-ai/react-js';
+import { MicControl } from '@think41/react-js';// Adjust path if needed
 
 function VoiceControl() {
   const handleMicToggle = (isActive: boolean) => {
@@ -1329,8 +1329,8 @@ You can create your own custom microphone control using the same underlying hook
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { useRTVIClient, useRTVIClientEvent } from '@pipecat-ai/client-react';
-import { RTVIEvent } from '@pipecat-ai/client-js';
+import { useRTVIClient, useRTVIClientEvent } from '@pipecat-ai/client-react'; // Adjust path if needed
+import { RTVIEvent } from '@pipecat-ai/client-js';// Adjust path if needed
 import { Mic, MicOff } from 'lucide-react';
 
 interface CustomMicControlProps {
