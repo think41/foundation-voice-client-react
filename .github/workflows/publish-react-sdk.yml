@@ -23,10 +23,10 @@ jobs:
           scope: '@think41'
 
       - name: Install dependencies
-        working-directory: ./foundation-voice-client-react # Ensure this path is correct
-        run: npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        working-directory: ./foundation-voice-client-react
+        run: |
+          npm config set @think41:registry https://npm.pkg.github.com
+          npm ci
 
       - name: Build package
         working-directory: ./foundation-voice-client-react # Ensure this path is correct
