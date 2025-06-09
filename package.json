@@ -1,0 +1,5 @@
+{
+	"dependencies": {
+		"foundation-voice-client-react#main": "github:think41/foundation-voice-client-react#main"
+	}
+}
