@@ -28,9 +28,10 @@
     "directory": "foundation-voice-client-react"
   },
   "peerDependencies": {
-    "@pipecat-ai/client-react": "^0.3.5",
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@pipecat-ai/client-js": "^0.4.0",
+    "@pipecat-ai/client-react": "^0.4.0"
   },
   "dependencies": {
     "@think41/foundation-voice-client-js": "^0.1.0",

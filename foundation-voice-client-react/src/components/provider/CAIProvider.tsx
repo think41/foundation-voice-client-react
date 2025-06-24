@@ -13,7 +13,7 @@ import { type PropsWithChildren, useEffect, useState, useCallback } from "react"
 
 export interface CAIProviderProps extends PropsWithChildren {
   clientType?: 'websocket' | 'daily' | 'webrtc' | string;
-  options?: RTVIClientOptions;
+  options?: Partial<RTVIClientOptions>;
   onLLMJsonCompletion?: (jsonString: string) => void;
   onLLMFunctionCall?: (func: any) => void;
 }
@@ -48,11 +48,7 @@ export function CAIProvider({
 
   useEffect(() => {
     const fetchClient = async () => {
-      console.log('fetchClient', clientType);
       const client = await createRTVIClient(clientType, options);
-      if(clientType === 'websocket') {
-        client?.enableMic(true);
-      }
       initializeLLMHelper(client);
       setClient(client);
     };
